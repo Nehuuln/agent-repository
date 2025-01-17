@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier{% endblock %}
+
+{% block body %}
+<a href="{{ path("dashboard") }}" class="back-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="bi bi-arrow-left">
+        <path d="M19 12H5"></path>
+        <path d="M12 19l-7-7 7-7"></path>
+    </svg>
+</a>
+    <div class="agent-add-page">
+        <h1 class="agent-add-title">Modifier un agent</h1>
+
+        {{ form_start(form, {'attr': {'class': 'agent-form'}}) }}
+            <div class="agent-form-fields">
+                {{ form_widget(form) }}
+            </div>
+            <button type="submit" class="btn-submit">Enregistrer</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

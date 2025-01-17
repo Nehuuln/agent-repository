@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <div class="accueil-page">
+    {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('dashboard_index') }}" style="position: absolute; top: 10px; right: 10px;">Dashboard</a>
+{% endif %}
+
+        <h1>Accueil</h1>
+        <p>Bienvenue sur le répertoire des agents !</p>
+
+        <h2>Catégories de jeux</h2>
+        <ul class="categories-list">
+            {% for category in categories %}
+                <li class="category-item">
+                    <a href="{{ path('category_show', { id: category.id }) }}">
+                        <img class="category-logo" src="{{ category.logo }}" alt="Logo de {{ category.name }}" />
+                    </a>
+                </li>
+            {% else %}
+                <p>Aucune catégorie trouvée.</p>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ agent.name }}{% endblock %}
+
+{% block body %}
+<a href="{{ path("home") }}" class="back-button">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M19 12H5"></path>
+        <path d="M12 19l-7-7 7-7"></path>
+    </svg>
+</a>
+
+<div class="agent-header">
+    <img class="agent-background" src="{{ agent.photo }}" alt="{{ agent.name }}">
+    <div class="agent-header-content">
+        <h1 class="agent-title">{{ agent.name }}</h1>
+        <p class="agent-description">{{ agent.description }}</p>
+    </div>
+</div>
+
+<iframe class="agent-video" 
+        width="100%" 
+        height="500" 
+        src="https://www.youtube.com/embed/{{ agent.cinematic | split('?')[0] }}?autoplay=1&mute=1&loop=1&playlist={{ agent.cinematic | split('?')[0] }}&controls=0&modestbranding=1&showinfo=0" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+</iframe>
+
+
+{% endblock %}

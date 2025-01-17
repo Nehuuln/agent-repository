@@ -1,0 +1,421 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+body {
+  background-color: #0f1923;
+  color: #ece8e1;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+h1 {
+  color: #ff4655;
+  font-weight: bold;
+}
+
+/* Style catégorie Valorant */
+
+.agent-card {
+  background-color: #ece8e1;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2s ease;
+}
+
+.agent-card:hover {
+  background-color: #d2cfc8;
+}
+
+.agent-card img {
+  transition: transform 0.2s ease;
+  z-index: 0;
+  cursor: crosshair;
+}
+
+.agent-card img:hover {
+  transform: scale(1.05);
+}
+
+.agent-card .card-body {
+  padding: 1rem;
+  position: relative;
+  z-index: 2;
+  cursor: crosshair;
+}
+
+.agent-card .card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #0f1923;
+  text-transform: uppercase;
+  z-index: 3;
+  cursor: crosshair;
+}
+
+a.text-decoration-none:hover {
+  text-decoration: none;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: crosshair;
+  z-index: 1000;
+}
+
+.back-button svg {
+  width: 30px;
+  height: 30px;
+  stroke: #ff4655;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover svg {
+  transform: scale(1.1);
+}
+
+/* Style spécifique à la page d'accueil */
+.accueil-page {
+  background-color: #f4f4f9;
+  color: #333;
+  font-family: "Source Sans 3", sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.accueil-page h1 {
+  font-size: 3rem;
+  color: #ff4655;
+  margin-bottom: 20px;
+}
+
+.accueil-page p {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-item {
+  margin: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.category-item:hover {
+  transform: scale(1.05);
+}
+
+.category-logo {
+  max-width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.category-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-item a:hover .category-logo {
+  opacity: 0.8;
+}
+
+/* Dashboard-specific Styles */
+.dashboard-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.dashboard-page ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.dashboard-page ul > li {
+  background-color: #1d2630;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.dashboard-page ul > li:hover {
+  transform: translateY(-5px);
+  background-color: #2a3744;
+}
+
+.dashboard-page .category-name {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #ff4655;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Links */
+.dashboard-page .text-decoration-none {
+  color: #ff4655;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.dashboard-page .text-decoration-none:hover {
+  color: #ece8e1;
+  text-decoration: underline;
+}
+
+/* Add Agent Button */
+.dashboard-page .add-agent-btn {
+  display: inline-block;
+  background-color: #ff4655;
+  color: #ece8e1;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-page .add-agent-btn:hover {
+  background-color: #d63c4d;
+}
+
+/* Sublist (Agents) */
+.dashboard-page ul > li ul {
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.dashboard-page ul > li ul > li {
+  background-color: #26333f;
+  color: #ece8e1;
+  padding: 8px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease;
+}
+
+.dashboard-page ul > li ul > li:hover {
+  transform: translateX(10px);
+  background-color: #2a3744;
+}
+
+.dashboard-page ul > li ul > li a.text-decoration-none {
+  font-size: 1rem;
+  color: inherit;
+  font-weight: normal;
+}
+
+.dashboard-page ul > li ul > li a.text-decoration-none:hover {
+  color: #ff4655;
+  text-decoration: underline;
+}
+
+/* Page pour ajouter un agent */
+.agent-add-page {
+  background-color: #0f1923;
+  color: black;
+  padding: 40px;
+  text-align: center;
+}
+
+.agent-add-title {
+  color: #ff4655;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Formulaire d'ajout d'agent */
+.agent-form {
+  background-color: #ece8e1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.agent-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.agent-form-fields .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.agent-form-fields input,
+.agent-form-fields select,
+.agent-form-fields textarea {
+  padding: 12px;
+  font-size: 1rem;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.agent-form-fields input:focus,
+.agent-form-fields select:focus,
+.agent-form-fields textarea:focus {
+  border-color: #ff4655;
+  box-shadow: 0 0 8px rgba(255, 70, 85, 0.6);
+  outline: none;
+}
+
+.agent-form-fields input::placeholder,
+.agent-form-fields select::placeholder,
+.agent-form-fields textarea::placeholder {
+  color: #777;
+  font-style: italic;
+}
+
+/* Bouton d'enregistrement */
+.btn-submit {
+  background-color: #ff4655;
+  color: #ece8e1;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  margin-top: 20px;
+}
+
+.btn-submit:hover {
+  background-color: #d63c4d;
+}
+
+.add-new-category-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn-add-new-category {
+  display: inline-block;
+  background-color: #ff4655;
+  color: #ece8e1;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-add-new-category:hover {
+  background-color: #d63c4d;
+  transform: translateY(-3px);
+}
+
+.btn-add-new-category:active {
+  transform: translateY(0);
+}
+
+/* Conteneur principal pour l'en-tête */
+.agent-header {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  color: #ece8e1;
+}
+
+/* L'image de l'agent en arrière-plan */
+.agent-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Assure que l'image couvre tout le conteneur */
+  filter: brightness(
+    0.5
+  ); /* Applique un filtre de luminosité pour assombrir l'image */
+  z-index: -1; /* Place l'image derrière le texte */
+}
+
+/* Contenu du texte */
+.agent-header-content {
+  position: relative;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+  z-index: 1; /* S'assurer que le texte soit au-dessus de l'image */
+}
+
+.agent-title {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ff4655;
+  margin-bottom: 10px;
+}
+
+/* Ligne rouge sous le nom */
+.agent-title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 5px;
+  background: #ff4655;
+  margin: 10px auto 0 auto;
+}
+
+/* Description */
+.agent-description {
+  font-size: 1.2rem;
+  color: #ece8e1;
+  max-width: 700px;
+  margin: 20px auto;
+  line-height: 1.6;
+}
+
+/* Vidéo */
+.agent-video {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
